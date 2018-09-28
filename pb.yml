@@ -1,0 +1,25 @@
+---
+  - name: install & configure docker
+    hosts: GCEtest
+    become: yes
+    tasks:
+    - name: Add docker-ce apt repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
+    - name: Add docker-ce GPG key
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+    - name: Install docker-ce dependencies
+      apt: 
+        name: "{{ item }}"
+        state: present
+        update-cache: yes
+      with_items:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg2
+        - software-properties-common
+    - name: Install docker-ce
+      apt:
+        name: docker-ce
