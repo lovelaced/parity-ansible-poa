@@ -5,10 +5,13 @@
     tasks:
     - name: Add docker-ce apt repository
       apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stabl
+        state: present
     - name: Add docker-ce GPG key
       apt_key:
         url: https://download.docker.com/linux/debian/gpg
+        state: present
+        id: 0EBFCD88
     - name: Install docker-ce dependencies
       apt: 
         name: "{{ item }}"
