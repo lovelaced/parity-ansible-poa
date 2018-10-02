@@ -1,0 +1,6 @@
+    - name: copy configurations to host
+      become: yes
+      copy:
+        src: config
+        dest: /code/parity-ethereum
+

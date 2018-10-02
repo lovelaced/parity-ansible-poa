@@ -1,0 +1,16 @@
+    - name: copy Dockerfiles to host
+      become: yes
+      copy:
+        src: ./parityimages/Dockerfile
+        dest: /code/parity-ethereum/
+    - name: pull official rust image from docker hub
+      become: yes
+      docker_image:
+        name: rust:1.29.1-slim-stretch
+    - name: build parity-ethereum image
+      become: yes
+      docker_image:
+        name: parity-ethereum
+        path: /code/parity-ethereum
+
+

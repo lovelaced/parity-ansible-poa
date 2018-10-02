@@ -1,0 +1,6 @@
+---
+# file: site.yml
+- hosts: all
+  roles:
+    - common
+    - authority

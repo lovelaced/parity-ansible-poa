@@ -1,0 +1,16 @@
+  - name: install core software
+    become: yes
+    apt:
+      name: "{{ item }}"
+      state: present
+      update-cache: yes
+    with_items:
+      - git
+  - name: Create code directory
+    become: yes
+    file:
+      path: /code
+      state: directory
+      owner: root
+      group: root
+      mode: 0775

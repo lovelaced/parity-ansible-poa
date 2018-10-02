@@ -1,0 +1,16 @@
+[parity]
+chain = "spec.json"
+base_path = "/tmp/parity0"
+[network]
+port = 30302
+[rpc]
+port = 8542
+apis = ["web3", "eth", "net", "personal", "parity", "parity_set", "traces", "rpc", "parity_accounts"]
+[websockets]
+port = 8452
+[account]
+password = ["node.pwds"]
+[mining]
+engine_signer = "0xb48e41daaee5bfcea844df0bcdbbf9ded620c909"
+reseal_on_txs = "none"
+usd_per_tx = "0"

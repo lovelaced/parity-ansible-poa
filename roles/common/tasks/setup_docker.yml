@@ -1,4 +1,5 @@
 ---
+  - import_playbook: setup_server.yml
   - name: install & configure docker
     hosts: GCEtest
     become: yes
@@ -26,3 +27,6 @@
     - name: Install docker-ce
       apt:
         name: docker-ce
+    - name: Install docker-compose
+      apt:
+        name: docker-compose

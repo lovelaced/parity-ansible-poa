@@ -1,0 +1,29 @@
+    - name: ensure parity-ethereum containers are running
+      become: yes
+      docker_container:
+        name: node0
+        image: parity-ethereum
+        ports:
+          - 8080:8080
+          - 8180:8180
+          - 8540:8540
+          - 8450:8450
+          - 30300:30300
+    - name: ensure second container is running
+      become: yes
+      docker_container:
+        name: node1
+        image: parity-ethereum
+        ports:
+          - 8541:8541
+          - 8451:8451
+          - 30301:30301
+    - name: ensure third container is running
+      become: yes
+      docker_container:
+        name: node2
+        image: parity-ethereum
+        ports:
+          - 8542:8542
+          - 8452:8452
+          - 30302:30302

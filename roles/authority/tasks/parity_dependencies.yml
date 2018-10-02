@@ -1,0 +1,21 @@
+    - name: clone parity-ethereum from gitlab
+      become: yes
+      git:
+        repo: 'https://gitlab.parity.io/parity/parity-ethereum.git'
+        dest: /code/parity-ethereum
+    - name: install parity-ethereum dependencies from apt
+      become: yes
+      apt:
+        name: "{{ item }}"
+        state: present
+        update-cache: yes
+      with_items:
+        - g++
+        - gcc
+        - libudev-dev
+        - pkg-config
+        - file
+        - make
+        - cmake
+        - perl
+        - yasm
