@@ -7,8 +7,16 @@ Tested on a fresh Google Cloud debian stretch box; only requirements are having 
 
 -------------
 You can run the playbook like this:
-`ansible-playbook site.yml -f 10 -u`
+`ansible-playbook site.yml -f 10 -u <remote user>`
 
 It comprises of two roles, "common" and "authority". The common role takes care of docker/other packages installation and the authority role handles the setup of the authority network. After the playbook runs, the ethstats dashboard should be accessible at your.ip:3001. This is admittedly of limited use for a PoA network, but there's a [recent fork of the project](https://github.com/eosclab/eth-netstats) that has PoA features on its roadmap, so that's something to keep an eye on.
 
+Note: it is recommended to change the ownership of the `/code` directory created in `roles/common/main.yml` to something other than root.
+
+Future TODO:
+* run as parity user rather than root inside container
+* avoid using --unsafe-expose
+* create more PoA-specific monitoring 
+* improve and flesh out the configuration structure
+* use templates for configuration
 
