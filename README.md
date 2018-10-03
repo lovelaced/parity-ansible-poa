@@ -20,6 +20,7 @@ It comprises of two roles, "common" and "authority". The common role takes care 
 Note: it is recommended to change the ownership of the `/code` directory created in `roles/common/main.yml` to something other than root.
 
 **Inexhaustive List of Future TODO:**
+* trigger new docker build on code change
 * support other distributions besides debian
 * run as parity user rather than root inside container
 * avoid using `--unsafe-expose`
