@@ -1,3 +1,7 @@
+# parity_dependencies.yml
+# Prepares to build parity.
+# Retrieves parity-ethereum from gitlab and installs dependencies.
+
     - name: clone parity-ethereum from gitlab
       become: yes
       git:

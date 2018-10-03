@@ -1,3 +1,6 @@
+# parity_docker_images.yml
+# Ensure the host has all Dockerfiles and images it needs.    
+
     - name: copy Dockerfiles to host
       become: yes
       copy:

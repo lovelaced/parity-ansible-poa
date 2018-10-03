@@ -1,3 +1,6 @@
+# common.yml
+# All servers will receive this configuration.
+
   - name: install core software
     become: yes
     apt:
@@ -13,7 +16,8 @@
     file:
       path: /code
       state: directory
-      owner: egrasmick
-      group: egrasmick
+      # this user can be whoever you want!
+      owner: root
+      group: root
       mode: 0775
   - include: setup_docker.yml

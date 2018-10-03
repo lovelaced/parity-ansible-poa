@@ -1,5 +1,7 @@
 ---
 # file: site.yml
+# This file deploys a Parity PoA network with three nodes.
+
 - hosts: all
   roles:
     - common

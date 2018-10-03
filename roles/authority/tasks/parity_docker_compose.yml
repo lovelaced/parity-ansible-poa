@@ -1,3 +1,6 @@
+# parity_docker_compose.yml
+# Creates a directory to transfer the docker-compose file to and deploys containers.
+
     - set_fact: compose_dir=/var/tmp/ansible-docker-service
     - name: establish docker-compose directory
       become: yes
@@ -13,7 +16,7 @@
       with_items:
       - parity_compose
         
-    - name: deploy the docker images
+    - name: use docker-compose to deploy containers
       become: yes
       docker_service:
         project_src: "{{ compose_dir }}/parity_compose"

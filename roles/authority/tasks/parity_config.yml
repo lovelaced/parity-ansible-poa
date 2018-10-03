@@ -1,3 +1,6 @@
+# parity_config.yml
+# copies all node configurations to remote hosts.
+
     - name: copy configurations to host
       become: yes
       copy:

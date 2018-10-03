@@ -1,4 +1,7 @@
 #!/bin/bash
+# Bootstrap script to hook Parity PoA nodes together
+# based on https://wiki.parity.io/Demo-PoA-tutorial.html
+
 # init our authorities and a user
 # to scale, the phrases to initialize can be a list to iterate over
 curl --data '{"jsonrpc":"2.0","method":"parity_newAccountFromPhrase","params":["node0", "node0"],"id":0}' -H "Content-Type: application/json" -X POST localhost:8540

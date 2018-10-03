@@ -1,3 +1,6 @@
+# parity_network_bootstrap.yml
+# Execute a post-deployment script to configure the network.    
+
     - name: bootstrap network with phrases
       become: yes
       script: bootstrap.sh
