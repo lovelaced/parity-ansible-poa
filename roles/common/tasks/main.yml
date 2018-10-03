@@ -6,11 +6,14 @@
       update-cache: yes
     with_items:
       - git
+      - jq
+      - apt-transport-https
   - name: Create code directory
     become: yes
     file:
       path: /code
       state: directory
-      owner: root
-      group: root
+      owner: egrasmick
+      group: egrasmick
       mode: 0775
+  - include: setup_docker.yml

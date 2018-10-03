@@ -1,4 +1,5 @@
-- include: parity_config.yml
 - include: parity_dependencies.yml
+- include: parity_config.yml
 - include: parity_docker_images.yml
 - include: parity_docker_compose.yml
+- include: parity_network_bootstrap.yml

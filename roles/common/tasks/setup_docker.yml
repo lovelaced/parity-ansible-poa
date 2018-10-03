@@ -1,19 +1,5 @@
----
-  - import_playbook: setup_server.yml
-  - name: install & configure docker
-    hosts: GCEtest
-    become: yes
-    tasks:
-    - name: Add docker-ce apt repository
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stabl
-        state: present
-    - name: Add docker-ce GPG key
-      apt_key:
-        url: https://download.docker.com/linux/debian/gpg
-        state: present
-        id: 0EBFCD88
     - name: Install docker-ce dependencies
+      become: yes
       apt: 
         name: "{{ item }}"
         state: present
@@ -24,9 +10,22 @@
         - curl
         - gnupg2
         - software-properties-common
+    - name: Add docker-ce GPG key
+      become: yes
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+        id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    - name: Add docker-ce apt repository
+      become: yes
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
+        state: present
     - name: Install docker-ce
+      become: yes
       apt:
         name: docker-ce
     - name: Install docker-compose
+      become: yes
       apt:
         name: docker-compose
