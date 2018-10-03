@@ -12,4 +12,3 @@ port = 8451
 password = ["/root/.local/share/io.parity.ethereum/node.pwds"]
 [mining]
 reseal_on_txs = "none"
-usd_per_tx = "0"
