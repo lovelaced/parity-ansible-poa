@@ -1,0 +1,16 @@
+    - set_fact: compose_dir=/var/tmp/ansible-docker-service
+    - name: establish docker-compose directory
+      file: 
+        path: "{{ compose_dir }}"
+        state: directory
+
+    - name: Upload docker-compose files
+      synchronize: 
+        src: "{{ item }}"
+        dest: "{{ compose_dir }}"
+      with_items:
+      - parity_compose
+        
+    - name: Start GitLab
+      docker_service:
+        project_src: "{{ compose_dir }}/parity_compose"

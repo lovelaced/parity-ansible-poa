@@ -1,0 +1,45 @@
+version: '2.0'
+services:
+   node0:
+       container_name: node0
+       image: parity-ethereum
+       volumes:
+       - /code/parity-ethereum/config:/root/.local/share/io.parity.ethereum/
+       - /root/node0:/tmp/parity0
+       ports:
+       - 8450:8450
+       - 8540:8540
+       - 30300:30300
+       command: --config /root/.local/share/io.parity.ethereum/node0.toml --unsafe-expose
+   node1:
+       container_name: node1
+       image: parity-ethereum
+       volumes:
+       - /code/parity-ethereum/config:/root/.local/share/io.parity.ethereum
+       - /root/node1:/tmp/parity0
+       ports:
+       - 8451:8451
+       - 8541:8541
+       - 30301:30301
+       command: --config /root/.local/share/io.parity.ethereum/node1.toml --unsafe-expose
+   node2:
+       container_name: node2
+       image: parity-ethereum
+       volumes:
+       - /code/parity-ethereum/config:/root/.local/share/io.parity.ethereum
+       - /root/node2:/tmp/parity0
+       ports:
+       - 8452:8452
+       - 8542:8542
+       - 30302:30302
+       command: --config /root/.local/share/io.parity.ethereum/node2.toml --unsafe-expose
+   monitor:
+       image: buythewhale/ethstats_monitor
+       volumes:
+       - /code/parity-ethereum/config/app.json:/home/ethnetintel/eth-net-intelligence-api/app.json:ro
+   dashboard:
+       image: buythewhale/ethstats
+       volumes:
+       - /code/parity-ethereum/config/ws_secret.json:/eth-netstats/ws_secret.json:ro
+       ports:
+       - 3001:3000

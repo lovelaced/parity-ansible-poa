@@ -7,7 +7,7 @@
                 "gasLimitBoundDivisor": "0x400",
                 "stepDuration": "2",
                 "validators" : {
-                    "list": [ "0xf8ba95262452adbab338e201366f4a773a04ac5a", "0xf38c2409232290ac43a6d0f0e0f51643552f0379", "0xb48e41daaee5bfcea844df0bcdbbf9ded620c909" ]
+                    "list": [ "0x002e28950558fbede1a9675cb113f0bd20912019","0x00bd138abd70e2f00903268f3db08f2d25677c9e", "0x00aa39d30f0d20ff03a22ccfc30b7efbfca597c2" ]
                 }
             }
         }
@@ -34,6 +34,6 @@
         "0x0000000000000000000000000000000000000002": { "balance": "1", "builtin": { "name": "sha256", "pricing": { "linear": { "base": 60, "word": 12 } } } },
         "0x0000000000000000000000000000000000000003": { "balance": "1", "builtin": { "name": "ripemd160", "pricing": { "linear": { "base": 600, "word": 120 } } } },
         "0x0000000000000000000000000000000000000004": { "balance": "1", "builtin": { "name": "identity", "pricing": { "linear": { "base": 15, "word": 3 } } } },
-	"0x00Ea169ce7e0992960D3BdE6F5D539C955316432": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }  
+	"0x004ec07d2329997267Ec62b4166639513386F32E": { "balance": "1606938044258990275541962092341162602522202993782792835301376" }  
     }
 }
