@@ -1,7 +1,10 @@
-### ansible deployment of a parity PoA network
+ansible deployment of a parity PoA network
+========
 
 This playbook will deploy 3 nodes, running in docker, on a remote host after pulling the latest parity-ethereum source from gitlab and building a new image on top of rust:1.29.1-slim-stretch.
+
 Tested on a fresh Google Cloud debian stretch box; only requirements are having your pubkey on the system, allowing ssh traffic and unfirewalling port 3001 (for the ethstats dashboard).
+
 -------------
 You can run the playbook like this:
 `ansible-playbook site.yml -f 10 -u`
