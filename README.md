@@ -29,5 +29,8 @@ Note: it is recommended to change the ownership of the `/code` directory created
 * avoid using `--unsafe-expose`
 * create more PoA-specific monitoring 
 * improve and flesh out the configuration structure
-* use templates for configuration and a var files
+* use templates for parity configuration
+* use var files for simple ansible configuration
+* add dynamic node names
+* bootstrap parity nodes in a more configurable, native way
 
