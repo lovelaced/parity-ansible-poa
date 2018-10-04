@@ -29,5 +29,5 @@ Note: it is recommended to change the ownership of the `/code` directory created
 * avoid using `--unsafe-expose`
 * create more PoA-specific monitoring 
 * improve and flesh out the configuration structure
-* use templates for configuration
+* use templates for configuration and a var files
 
