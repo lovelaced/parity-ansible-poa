@@ -11,6 +11,8 @@ Ansible hosts file uses this group.
 # /etc/ansible/hosts
 [GCEtest]
 ```
+
+[live demo here](http://35.229.109.174:3001/)
 -------------
 You can run the playbook like this:
 `ansible-playbook site.yml -f 10 -u <remote user>`
